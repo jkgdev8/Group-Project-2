@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS museum_db;
+DROP DATABASE IF EXISTS sub_calendar;
 
-CREATE DATABASE museum_db;
+CREATE DATABASE sub_calendar;
