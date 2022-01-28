@@ -8,10 +8,10 @@ router.get('/', (req, res) => {
   Profile.findAll({
     attributes: [
       'id',
-      'post_url',
-      'title',
-      'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+      'subscription',
+      'price',
+      'date',
+      
     ],
     include: [
       
@@ -43,10 +43,9 @@ router.get('/post/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'post_url',
-      'title',
-      'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+      'subscription',
+      'price',
+      'date',
     ],
     include: [
     
@@ -64,7 +63,7 @@ router.get('/post/:id', (req, res) => {
 
       const post = dbPostData.get({ plain: true });
 
-      res.render('single-post', {
+      res.render('single-profile', {
         post,
         loggedIn: req.session.loggedIn
       });

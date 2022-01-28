@@ -13,10 +13,10 @@ class Profile extends Model {
         },
         attributes: [
           'id',
-          'post_url',
-          'title',
-          'created_at',
-          [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+          'subscription',
+          'price',
+          'date',
+          
         ],
         
       });
@@ -33,30 +33,25 @@ Profile.init(
       primaryKey: true,
       autoIncrement: true
     },
-    title: {
+    subscription: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    post_url: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        isURL: true
-      }
-    },
-    user_id: {
+    price: {
       type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id'
-      }
+      allowNull: false,
+      
+    },
+    date: {
+      type: DataTypes.DATE,
+      allowNull: false
     }
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'post'
+    modelName: 'profile'
   }
 );
 
