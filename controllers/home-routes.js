@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User} = require('../models');
+const { Profile, User} = require('../models');
 
 // get all posts for homepage
 router.get('/', (req, res) => {
   console.log('======================');
-  Post.findAll({
+  Profile.findAll({
     attributes: [
       'id',
       'post_url',
@@ -22,10 +22,10 @@ router.get('/', (req, res) => {
     ]
   })
     .then(dbPostData => {
-      const posts = dbPostData.map(post => post.get({ plain: true }));
+      const profiles = dbPostData.map(post => post.get({ plain: true }));
 
       res.render('homepage', {
-        posts,
+        profiles,
         loggedIn: req.session.loggedIn
       });
     })
@@ -37,7 +37,7 @@ router.get('/', (req, res) => {
 
 // get single post
 router.get('/post/:id', (req, res) => {
-  Post.findOne({
+  Profile.findOne({
     where: {
       id: req.params.id
     },

@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Post, User } = require('../../models');
+const { Profiles, User } = require('../../models');
 
 // get all posts
 router.get('/', (req, res) => {
   console.log('======================');
-  Post.findAll({
+  Profiles.findAll({
     attributes: [
       'id',
       'post_url',
@@ -29,7 +29,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  Post.findOne({
+  Profiles.findOne({
     where: {
       id: req.params.id
     },
@@ -63,7 +63,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
   if (req.session) {
-    Post.create({
+    Profiles.create({
       title: req.body.title,
       post_url: req.body.post_url,
       user_id: req.session.user_id
@@ -79,7 +79,7 @@ router.post('/', (req, res) => {
 router.put('/upvote', (req, res) => {
   // custom static method created in models/Post.js
   if (req.session) {
-    Post.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
+    Profiles.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
       .then(updatedVoteData => res.json(updatedVoteData))
       .catch(err => {
         console.log(err);
@@ -89,7 +89,7 @@ router.put('/upvote', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-  Post.update(
+  Profiles.update(
     {
       title: req.body.title
     },
@@ -114,7 +114,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   console.log('id', req.params.id);
-  Post.destroy({
+  Profiles.destroy({
     where: {
       id: req.params.id
     }
