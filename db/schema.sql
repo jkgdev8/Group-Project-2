@@ -1,3 +1,2 @@
-DROP DATABASE IF EXISTS sub_calendar;
-
-CREATE DATABASE sub_calendar;
+DROP DATABASE IF EXISTS just_tech_news_db;
+CREATE DATABASE just_tech_news_db;
