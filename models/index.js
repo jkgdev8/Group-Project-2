@@ -1,6 +1,6 @@
 // import all models
-const Profile = require('./profiles');
-const User = require('./User');
+const Profile = require('./profile');
+const User = require('./user');
 
 
 // create associations
@@ -15,4 +15,4 @@ Profile.belongsTo(User, {
 
 
 
-module.exports = { User, Profile};
+module.exports = { User, Profile };

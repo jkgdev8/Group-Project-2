@@ -21,11 +21,11 @@ router.get('/', (req, res) => {
       }
     ]
   })
-    .then(dbPostData => {
-      const profiles = dbPostData.map(post => post.get({ plain: true }));
+    .then(dbprofiledata => {
+      const profile = dbprofiledata.map(post => post.get({ plain: true }));
 
       res.render('homepage', {
-        profiles,
+        profile,
         loggedIn: req.session.loggedIn
       });
     })
@@ -55,13 +55,13 @@ router.get('/post/:id', (req, res) => {
       }
     ]
   })
-    .then(dbPostData => {
-      if (!dbPostData) {
+    .then(dbprofiledata => {
+      if (!dbprofiledata) {
         res.status(404).json({ message: 'No post found with this id' });
         return;
       }
 
-      const post = dbPostData.get({ plain: true });
+      const post = dbprofiledata.get({ plain: true });
 
       res.render('single-profile', {
         post,
