@@ -4,6 +4,9 @@ LIMIT 1000;
 SELECT * 
 FROM `sub_db`.`profile`
 LIMIT 1000;
+SELECT * 
+FROM `sub_db`.`Sessions`
+LIMIT 1000;
 
 
 

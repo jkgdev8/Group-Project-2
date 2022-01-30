@@ -17,7 +17,7 @@ class Profile extends Model {
           'id',
           'subscription',
           'price',
-          'date',
+          'date_payment',
           
         ],
         
@@ -44,8 +44,8 @@ Profile.init(
       allowNull: false,
       
     },
-    date: {
-      type: DataTypes.DATE,
+    date_payment: {
+      type: DataTypes.DATEONLY,
       allowNull: false
     }
   },

@@ -1,6 +1,6 @@
 // import all models
-const Profile = require('./profile');
-const User = require('./user');
+const Profile = require('./Profile');
+const User = require('./User');
 
 
 // create associations
