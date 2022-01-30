@@ -2,7 +2,10 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-const seedUsers = require('./seeds/user-seeds')
+const seedUser = require('./seeds/user-seeds');
+const seedProfile = require('./seeds/profile-seeds');
+
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -35,8 +38,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(require('./controllers/'));
 
-sequelize.sync({ force: true }).then(async () => {
-  // await seedUsers();
+sequelize.sync({ force: false }).then(async () => {
+  await seedUser();
+  await seedProfile();
   app.listen(PORT, () => console.log('Now listening'));
 });
 
