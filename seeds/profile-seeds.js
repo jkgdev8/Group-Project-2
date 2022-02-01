@@ -2,7 +2,7 @@ const { Profile } = require('../models');
 
 const profiledata = [
   {
-    post_id: 1,
+    id: 1,
     subscription: 'Netflix',
     price: 14.99,
     date: 2022-01-01,
@@ -10,7 +10,7 @@ const profiledata = [
 
   },
   {
-    post_id: 2,
+    id: 2,
     subscription: 'Disney',
     price: 14.99,
     date: 2022-01-01,
@@ -19,7 +19,7 @@ const profiledata = [
     
   },
   {
-    post_id: 3,
+    id: 3,
     subscription: 'Hulu',
     price: 9.99,
     date: 2022-01-01,
@@ -27,7 +27,7 @@ const profiledata = [
   
   },
   {
-    post_id: 4,
+    id: 4,
     subscription: 'Hulu',
     price: 9.99,
     date: 2022-01-02,

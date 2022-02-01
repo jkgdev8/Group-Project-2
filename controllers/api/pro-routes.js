@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
   console.log('======================');
   Profile.findAll({
     attributes: [
-      'post_id',
+      'id',
       'subscription',
       'price',
       'date',
@@ -33,7 +33,7 @@ router.get('/:id', (req, res) => {
       id: req.params.id
     },
     attributes: [
-      'post_id',
+      'id',
       'subscription',
       'price',
       'date',
