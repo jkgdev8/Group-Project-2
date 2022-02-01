@@ -2,12 +2,12 @@ const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Profile , User } = require('../../models');
 
-// get all posts
+// get all profiles
 router.get('/', (req, res) => {
   console.log('======================');
   Profile.findAll({
     attributes: [
-      'id',
+      'post_id',
       'subscription',
       'price',
       'date',
@@ -33,7 +33,7 @@ router.get('/:id', (req, res) => {
       id: req.params.id
     },
     attributes: [
-      'id',
+      'post_id',
       'subscription',
       'price',
       'date',

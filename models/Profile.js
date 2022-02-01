@@ -10,12 +10,13 @@ class Profile extends Model {
 // create fields/columns for Profile model
 Profile.init(
   {
-    id: {
+    post_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
+    
     subscription: {
       type: DataTypes.STRING,
       allowNull: false
@@ -28,7 +29,16 @@ Profile.init(
     date: {
       type: DataTypes.DATEONLY,
       allowNull: false
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
     }
+    
+
   },
   {
     sequelize,

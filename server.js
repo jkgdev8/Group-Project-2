@@ -26,6 +26,7 @@ const sess = {
 app.use(session(sess));
 
 const helpers = require('./utils/helpers');
+const { truncate } = require('fs');
 
 const hbs = exphbs.create({ helpers });
 
