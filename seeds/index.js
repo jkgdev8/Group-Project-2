@@ -1,6 +1,7 @@
 const seedUser = require('./user-seeds');
 const seedProfile = require('./profile-seeds');
 
+const moment = require('moment');
 
 const sequelize = require('../config/connection');
 

@@ -1,11 +1,14 @@
 const { Profile } = require('../models');
+const moment = require('moment');
+const date = moment().format();
+
 
 const profileData = [
   {
     profile_id: 1,
     subscription: 'Netflix',
     price: 14.99,
-    date: 2022-01-01,
+    date: '2022-12-01',
     user_id: 1
 
   },
@@ -13,7 +16,7 @@ const profileData = [
     profile_id: 2,
     subscription: 'Disney',
     price: 14.99,
-    date: 2022-01-01,
+    date: '2022-10-01',
     user_id: 1
     
     
@@ -22,7 +25,7 @@ const profileData = [
     profile_id: 3,
     subscription: 'Hulu',
     price: 9.99,
-    date: 2022-01-01,
+    date: '2022-11-01',
     user_id: 1
   
   },
@@ -30,7 +33,7 @@ const profileData = [
     profile_id: 4,
     subscription: 'Hulu',
     price: 9.99,
-    date: 2022-01-02,
+    date: '2022-10-01',
     user_id: 2
   
   },
@@ -38,7 +41,7 @@ const profileData = [
     profile_id: 5,
     subscription: 'Disney+',
     price: 14.99,
-    date: 2022-01-02,
+    date: '2022-10-01',
     user_id: 6
 
   },
