@@ -10,7 +10,7 @@ class Profile extends Model {
 // create fields/columns for Profile model
 Profile.init(
   {
-    id: {
+    profile_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,

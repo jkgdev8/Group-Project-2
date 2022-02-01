@@ -1,13 +1,14 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Profile , User } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // get all profiles
 router.get('/', (req, res) => {
   console.log('======================');
   Profile.findAll({
     attributes: [
-      'id',
+      'profile_id',
       'subscription',
       'price',
       'date',
@@ -20,7 +21,7 @@ router.get('/', (req, res) => {
       }
     ]
   })
-    .then(dbprofiledata => res.json(dbprofiledata))
+    .then(dbProfileData => res.json(dbProfileData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -33,7 +34,7 @@ router.get('/:id', (req, res) => {
       id: req.params.id
     },
     attributes: [
-      'id',
+      'profile_id',
       'subscription',
       'price',
       'date',
@@ -45,12 +46,12 @@ router.get('/:id', (req, res) => {
       }
     ]
   })
-    .then(dbprofiledata => {
-      if (!dbprofiledata) {
+    .then(dbProfileData => {
+      if (!dbProfileData) {
         res.status(404).json({ message: 'No post found with this id' });
         return;
       }
-      res.json(dbprofiledata);
+      res.json(dbProfileData);
     })
     .catch(err => {
       console.log(err);
@@ -66,7 +67,7 @@ router.post('/', (req, res) => {
       post_url: req.body.post_url,
       user_id: req.session.user_id
     })
-      .then(dbprofiledata => res.json(dbprofiledata))
+      .then(dbProfileData => res.json(dbProfileData))
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -86,12 +87,12 @@ router.put('/:id', (req, res) => {
       }
     }
   )
-    .then(dbprofiledata => {
-      if (!dbprofiledata) {
+    .then(dbProfileData => {
+      if (!dbProfileData) {
         res.status(404).json({ message: 'No post found with this id' });
         return;
       }
-      res.json(dbprofiledata);
+      res.json(dbProfileData);
     })
     .catch(err => {
       console.log(err);
@@ -106,12 +107,12 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   })
-    .then(dbprofiledata => {
-      if (!dbprofiledata) {
+    .then(dbProfileData => {
+      if (!dbProfileData) {
         res.status(404).json({ message: 'No post found with this id' });
         return;
       }
-      res.json(dbprofiledata);
+      res.json(dbProfileData);
     })
     .catch(err => {
       console.log(err);

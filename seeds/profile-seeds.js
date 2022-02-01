@@ -1,8 +1,8 @@
 const { Profile } = require('../models');
 
-const profiledata = [
+const profileData = [
   {
-    id: 1,
+    profile_id: 1,
     subscription: 'Netflix',
     price: 14.99,
     date: 2022-01-01,
@@ -10,7 +10,7 @@ const profiledata = [
 
   },
   {
-    id: 2,
+    profile_id: 2,
     subscription: 'Disney',
     price: 14.99,
     date: 2022-01-01,
@@ -19,7 +19,7 @@ const profiledata = [
     
   },
   {
-    id: 3,
+    profile_id: 3,
     subscription: 'Hulu',
     price: 9.99,
     date: 2022-01-01,
@@ -27,18 +27,28 @@ const profiledata = [
   
   },
   {
-    id: 4,
+    profile_id: 4,
     subscription: 'Hulu',
     price: 9.99,
     date: 2022-01-02,
     user_id: 2
   
   },
+  {
+    profile_id: 5,
+    subscription: 'Disney+',
+    price: 14.99,
+    date: 2022-01-02,
+    user_id: 6
+
+  },
+
 
   
   
 ];
 
-const seedProfile = () => Profile.bulkCreate(profiledata);
+const seedProfile = () => Profile.bulkCreate(profileData);
+//const seedProfile = () => Profile.bulkCreate(profileData, {individualHooks: true });
 
 module.exports = seedProfile;

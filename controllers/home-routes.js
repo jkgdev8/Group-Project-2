@@ -2,12 +2,12 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Profile, User} = require('../models');
 
-// get all posts for homepage
+// get all profiles for homepage
 router.get('/', (req, res) => {
   console.log('======================');
   Profile.findAll({
     attributes: [
-      'id',
+      'profile_id',
       'subscription',
       'price',
       'date',
@@ -21,8 +21,8 @@ router.get('/', (req, res) => {
       }
     ]
   })
-    .then(dbprofiledata => {
-      const profile = dbprofiledata.map(post => post.get({ plain: true }));
+    .then(dbProfileData => {
+      const profile = dbProfileData.map(post => post.get({ plain: true }));
 
       res.render('homepage', {
         profile,
@@ -35,14 +35,14 @@ router.get('/', (req, res) => {
     });
 });
 
-// get single post
-router.get('/post/:id', (req, res) => {
+// get single profile
+router.get('/:id', (req, res) => {
   Profile.findOne({
     where: {
       id: req.params.id
     },
     attributes: [
-      'id',
+      'profile_id:',
       'subscription',
       'price',
       'date',
@@ -55,13 +55,13 @@ router.get('/post/:id', (req, res) => {
       }
     ]
   })
-    .then(dbprofiledata => {
-      if (!dbprofiledata) {
+    .then(dbProfileData => {
+      if (!dbdbProfileData) {
         res.status(404).json({ message: 'No post found with this id' });
         return;
       }
 
-      const post = dbprofiledata.get({ plain: true });
+      const post = dbProfileData.get({ plain: true });
 
       res.render('single-profile', {
         post,
