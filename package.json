@@ -1,5 +1,5 @@
 {
-  "name": "just-tech-news",
+  "name": "subscription_calendar",
   "version": "1.0.0",
   "description": "update",
   "main": "server.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jkgdev8/just-tech-news.git"
+    "url": "git+https://github.com/jkgdev8/Group-Project-2.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Julienne, Marcos, Harry",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jkgdev8/just-tech-news/issues"
+    "url": "https://github.com/jkgdev8/Group-Project-2/issues"
   },
-  "homepage": "https://github.com/jkgdev8/just-tech-news#readme",
+  "homepage": "https://github.com/jkgdev8/Group-Project-2",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",

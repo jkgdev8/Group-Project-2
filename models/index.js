@@ -15,4 +15,4 @@ Profile.belongsTo(User, {
 
 
 
-module.exports = { User, Profile };
+module.exports = { User, Profile};
