@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS sub_caldendar;
+DROP DATABASE IF EXISTS sub_db;
 
-CREATE DATABASE sub_caldendar;
+CREATE DATABASE sub_db;

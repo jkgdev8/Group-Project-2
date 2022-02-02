@@ -1,5 +1,5 @@
 // import all models
-const Profile = require('./profiles');
+const Profile = require('./Profile');
 const User = require('./User');
 
 

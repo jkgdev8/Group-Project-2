@@ -16,8 +16,12 @@
       </h1>
       <nav>
         {{#if loggedIn}}
-        
+        <a href="/dashboard/create/">
+          <button class="btn-no-style" enabled="true" >profile</button>
+        </a> 
+        {{!-- <button class="btn-no-style">profile</button> --}}
         <button id="logout" class="btn-no-style">logout</button>
+        
        
         {{/if}}
       </nav>
@@ -30,6 +34,7 @@
   
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
+  <script src="/javascript/add-profile.js"></script>
   {{/if}}
 </body>
 

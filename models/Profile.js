@@ -1,30 +1,12 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+
+
 // create our Post model
 class Profile extends Model {
-  static upvote(body, models) {
-    return models.Vote.create({
-      user_id: body.user_id,
-      post_id: body.post_id
-    }).then(() => {
-      return Profile.findOne({
-        where: {
-          id: body.post_id
-        },
-        attributes: [
-          'id',
-          'subscription',
-          'price',
-          'date',
-          
-        ],
-        
-      });
-    });
-  }
 }
 
-// create fields/columns for Post model
+// create fields/columns for Profile model
 Profile.init(
   {
     id: {
@@ -33,6 +15,7 @@ Profile.init(
       primaryKey: true,
       autoIncrement: true
     },
+    
     subscription: {
       type: DataTypes.STRING,
       allowNull: false
@@ -43,9 +26,18 @@ Profile.init(
       
     },
     date: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: false
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
     }
+    
+
   },
   {
     sequelize,
