@@ -4,13 +4,12 @@ const sequelize = require('../config/connection');
 
 // create our Post model
 class Profile extends Model {
-  
 }
 
 // create fields/columns for Profile model
 Profile.init(
   {
-    profile_id: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,

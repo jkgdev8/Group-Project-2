@@ -1,17 +1,18 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Profile , User } = require('../../models');
-const withAuth = require('../../utils/auth');
+
 
 // get all profiles
 router.get('/', (req, res) => {
   console.log('======================');
   Profile.findAll({
     attributes: [
-      'profile_id',
+      'id',
       'subscription',
       'price',
       'date',
+      'user_id',
     ],
     include: [
   
@@ -34,10 +35,11 @@ router.get('/:id', (req, res) => {
       id: req.params.id
     },
     attributes: [
-      'profile_id',
+      'id',
       'subscription',
       'price',
       'date',
+      'user_id',
     ],
     include: [
       {
@@ -48,7 +50,7 @@ router.get('/:id', (req, res) => {
   })
     .then(dbProfileData => {
       if (!dbProfileData) {
-        res.status(404).json({ message: 'No post found with this id' });
+        res.status(404).json({ message: 'No profile found with this id' });
         return;
       }
       res.json(dbProfileData);

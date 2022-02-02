@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Profile } = require('../../models');
-const withAuth = require('../../utils/auth');
+
 
 // get all users
 router.get('/', (req, res) => {
@@ -26,7 +26,8 @@ router.get('/:id', (req, res) => {
         attributes: ['id',
         'subscription',
         'price',
-        'date',]
+        'date',
+        'user_id']
       },
     
     ]

@@ -5,7 +5,7 @@ const date = moment().format();
 
 const profileData = [
   {
-    profile_id: 1,
+    id: 1,
     subscription: 'Netflix',
     price: 14.99,
     date: '2022-12-01',
@@ -13,7 +13,7 @@ const profileData = [
 
   },
   {
-    profile_id: 2,
+    id: 2,
     subscription: 'Disney',
     price: 14.99,
     date: '2022-10-01',
@@ -22,7 +22,7 @@ const profileData = [
     
   },
   {
-    profile_id: 3,
+    id: 3,
     subscription: 'Hulu',
     price: 9.99,
     date: '2022-11-01',
@@ -30,7 +30,7 @@ const profileData = [
   
   },
   {
-    profile_id: 4,
+    id: 4,
     subscription: 'Hulu',
     price: 9.99,
     date: '2022-10-01',
@@ -38,7 +38,7 @@ const profileData = [
   
   },
   {
-    profile_id: 5,
+    id: 5,
     subscription: 'Disney+',
     price: 14.99,
     date: '2022-10-01',

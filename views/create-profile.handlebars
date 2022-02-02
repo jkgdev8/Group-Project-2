@@ -1,0 +1,38 @@
+<section>
+    <a href="/dashboard" class="is-pulled-right"> &larr; back to dashboard</a>
+  <h2 class="title">Create Subscription Profile</h2><hr>
+
+  <form class="new-post-form">
+    <div>
+      <label for="post-title">Subsciption Name:</label>
+      <input class="input" type="text" id="post-title" name="post-title" placeholder="insert subscription here"/>
+    </div>
+    <div>
+      <label for="post-content">Price:</label>
+      <input class="textarea is-large" id="post-content" name="post-content" placeholder="insert  price here"/>
+    </div>
+
+    {{!-- <label for="start">Date Of Payment:</label>
+
+    <input type="date" id="start" name="trip-start"
+       value="2022-01-01"
+       min="2022-01-01" max="3000-12-31"> --}}
+
+      <span>
+        <label for="day">Day:</label>
+        <select name="day" id="day"></select>
+      </span> 
+      <span>
+        <label for="month">Month:</label>
+        <select name="month" id="month"></select>
+      </span> <span>
+        <label for="year">Year:</label>
+        <select name="year" id="year"></select>
+      </span> 
+    
+    <button type="submit" class="button is-primary is-pulled-right">Create Profile</button>
+  </form>     
+</section>
+
+<script src="/javascript/add-profile.js"></script>
+<script src="/javascript/date.js"></script>
