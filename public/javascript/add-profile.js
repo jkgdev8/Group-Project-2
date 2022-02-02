@@ -4,7 +4,7 @@ async function newFormHandler(event) {
     const title = document.querySelector('input[name="post-title"]').value;
     const post_content = document.querySelector('input[name="post-content"]').value;
   
-    const response = await fetch(`/api/posts`, {
+    const response = await fetch(`/`, {
       method: 'POST',
       body: JSON.stringify({
         title,
@@ -22,4 +22,4 @@ async function newFormHandler(event) {
     }
   }
   
-  document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
+  document.querySelector('#create-profile').addEventListener('submit', newFormHandler);
