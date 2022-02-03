@@ -17,16 +17,16 @@ Profile.init(
     },
     
     subscription: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     price: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: false
       
     },
     date: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     user_id: {

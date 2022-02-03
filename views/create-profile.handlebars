@@ -1,34 +1,33 @@
 <section>
-    <a href="/dashboard" class="is-pulled-right"> &larr; back to dashboard</a>
+    
   <h2 class="title">Create Subscription Profile</h2><hr>
 
-  <form class="new-post-form">
+  <form class="new-profile-form">
     <div>
-      <label for="post-title">Subsciption Name:</label>
-      <input class="input" type="text" id="post-title" name="post-title" placeholder="insert subscription here"/>
+      <label for="subscription">Subsciption Name:</label>
+      <input class="input" type="text" id="subscription" name="subscription" placeholder="insert subscription here"/>
     </div>
     <div>
-      <label for="post-content">Price:</label>
-      <input class="textarea is-large" id="post-content" name="post-content" placeholder="insert  price here"/>
-    </div>
+      <label for="price">Price:</label>
+      <input class="textarea is-large" id="price" name="price" placeholder="insert  price here"/>
+    </div> 
 
-    {{!-- <label for="start">Date Of Payment:</label>
+     <div>
+      <label for="date">Date:</label>
+        
+          <input class="textarea is-large" type="number" id="date" name="date" min="1" max="31"/>
+          
+          
+        
+    </div> 
 
-    <input type="date" id="start" name="trip-start"
-       value="2022-01-01"
-       min="2022-01-01" max="3000-12-31"> --}}
-
-      <span>
-        <label for="day">Day:</label>
-        <select name="day" id="day"></select>
-      </span> 
-      <span>
-        <label for="month">Month:</label>
-        <select name="month" id="month"></select>
-      </span> <span>
-        <label for="year">Year:</label>
-        <select name="year" id="year"></select>
-      </span> 
+  
+      {{!-- <span>
+        <label for="date">Select Date:</label>
+        <select class="dates"></select>
+    
+      </span>  --}}
+      
     
     <button type="submit" class="button is-primary is-pulled-right">Create Profile</button>
   </form>     
@@ -36,3 +35,6 @@
 
 <script src="/javascript/add-profile.js"></script>
 <script src="/javascript/date.js"></script>
+<script type="text/javascript">
+dates('option');</script>
+

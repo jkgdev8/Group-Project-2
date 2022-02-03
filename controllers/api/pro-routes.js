@@ -30,6 +30,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
+  console.log(req.params)
   Profile.findOne({
     where: {
       id: req.params.id
@@ -61,19 +62,23 @@ router.get('/:id', (req, res) => {
     });
 });
 
+
 router.post('/', (req, res) => {
   // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
   if (req.session) {
     Profile.create({
-      title: req.body.title,
-      post_url: req.body.post_url,
-      user_id: req.session.user_id
+      subscription: req.body.subscription,
+      price: req.body.price,
+      user_id: req.session.user_id || req.body.user_id,
+      date: req.body.date
+      
     })
       .then(dbProfileData => res.json(dbProfileData))
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
       });
+      
   }
 });
 
