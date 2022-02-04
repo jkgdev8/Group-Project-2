@@ -1,20 +1,47 @@
+<section>
     <div class="mb-5 pt-3">
-        <a href="/dashboard/create/"><button id="create-profile" class="button is-primary is-pulled-right">create profile</button></a>
-        
-        <h2 class="title pb-4">Your Subscription Profiles</h2><hr>
-{{#if posts.length}}
+        <h2 class="title">Create Subscription Profile</h2><hr>
     </div>
-
-    {{#each posts as |post|}}
-        {{> post-info post}}
-        
-            <a href="/dashboard/edit/{{post.id}}"><button class="button mb-5 ml-5 is-warning">edit post</button></a>
+    {{!-- cretion of the subscriptions --}}
+  <section id="subscription-containor">  
+    <section id="subscription-creation">
+      <form class="new-profile-form">
+        <div>
+            {{!-- geting the name of subscription --}}
+          <label for="subscription">Subsciption Name:</label>
+          <input class="input" type="text" id="subscription" name="subscription" placeholder="insert subscription here"/>
         </div>
-    {{/each}}
+        <div>
+            {{!-- getig the price --}}
+          <label for="price">Price:</label>
+          <input class="textarea is-large" id="price" name="price" placeholder="insert  price here"/>
+        </div> 
+        <div>
+            {{!-- geting the day --}}
+          <label for="date">Date:</label> 
+              <input class="textarea is-large" type="number" id="date" name="date" min="1" max="31"/>
+        </div> 
+        
+      </form> 
+        
+  </section>
+  {{!-- create BTN --}}
+  <div class="subscription-btn">
+    <button type="submit" class="button is-primary is-pulled-right">Create Profile</button>
+  </div> 
 
-{{else}}
-<h6 class="pb-4 has-text-centered is-italic">You Currently Do Not Have Any Profiles Set Up</h6>
-
-{{/if}}
-
-
+  <section id="subscriptions-removal">
+    <div class="subscription">
+        <label for="text">netflex</label>
+    </div>
+    <div class="subscription">
+        <label for="text">netflex</label>
+    </div>
+    <div class="subscription">
+        <label for="text">netflex</label>
+    </div>
+  </section>
+</section>
+<script src="/javascript/add-profile.js"></script>
+{{!-- <script src="/javascript/date.js"></script>
+<script type="text/javascript">dates('option');</script> --}}

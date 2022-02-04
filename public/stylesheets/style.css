@@ -23,13 +23,11 @@ a:hover {
 
 button {
   background-color: #225ca3;
-  border: 0;
-  padding: 1%;
   color: white;
   font-weight: bold;
-  transition: background-color .1s;
   cursor: pointer;
-  border-radius: 5px;
+  width: 190px;
+  padding:3px 0;
 }
 
 button:hover {
@@ -175,4 +173,41 @@ footer {
   justify-content: center;
   padding: 1%;
   font-size: 110%;
+}
+#subscription-containor{
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  /* border: 3px solid black;
+  border-right-width: 5px;
+  border-left-width: 5px; */
+}
+#subscriptions-removal{
+  border: 3px solid black;
+  border-right-width: 5px;
+  border-left-width: 5px;
+  width: 190px;
+  display: flex;
+  flex-direction: column;
+}
+.subscription{
+  margin-top: 5px;
+  display: flex;
+  border: 3px solid black;
+  border-right-width: 0px;
+  border-left-width: 0px;
+  flex-direction: row;
+  justify-content: center;
+}
+.subscription:hover{
+  background-color: blue;
+}
+#subscription-creation{
+  width: 190px;
+  border: 1px solid black;
+  border-right-width: 5px;
+  border-left-width: 5px;
+}
+.subscription-btn{
+  width: 190px;
 }
