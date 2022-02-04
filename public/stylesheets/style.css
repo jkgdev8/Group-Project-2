@@ -26,7 +26,7 @@ button {
   color: white;
   font-weight: bold;
   cursor: pointer;
-  width: 190px;
+  width: 182px;
   padding:3px 0;
 }
 
@@ -176,17 +176,15 @@ footer {
 }
 #subscription-containor{
   display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-  /* border: 3px solid black;
-  border-right-width: 5px;
-  border-left-width: 5px; */
+    flex-direction: column;
+    justify-content: space-between;
 }
 #subscriptions-removal{
+  height: 50%;
   border: 3px solid black;
   border-right-width: 5px;
   border-left-width: 5px;
-  width: 190px;
+  /* width: 190px; */
   display: flex;
   flex-direction: column;
 }
@@ -203,11 +201,12 @@ footer {
   background-color: blue;
 }
 #subscription-creation{
+  height: 50%;
   width: 190px;
   border: 1px solid black;
   border-right-width: 5px;
   border-left-width: 5px;
 }
-.subscription-btn{
-  width: 190px;
+#subscription-btn{
+  margin-top: 166px;
 }

@@ -3,52 +3,59 @@
 <script src='/javascript/calfunc.js'></script>
 <script src='/javascript/calendar.js'></script>
 </head>
-<section>
   
-    <div class="mb-5 pt-3">
-        <h2 class="title">Create Subscription Profile</h2><hr>
-    </div>
-    {{!-- cretion of the subscriptions --}}
+      <div class="mb-5 pt-3">
+          <h2 class="title">Create Subscription Profile</h2><hr>
+      </div>
+      
+<section id="calendar-holder">
+  {{!-- calendar --}}
+  <body>
+    <div id='calendar'></div>
+  </body>
+
   <section id="subscription-containor">  
     <section id="subscription-creation">
-      <form class="new-profile-form">
-        <div>
-            {{!-- geting the name of subscription --}}
-          <label for="subscription">Subsciption Name:</label>
-          <input class="input" type="text" id="subscription" name="subscription" placeholder="insert subscription here"/>
+      <form class="new-profile-form" id="BTN">
+        <section>
+          <div>
+              {{!-- geting the name of subscription --}}
+            <label for="subscription">Subsciption Name:</label>
+            <input class="input" type="text" id="subscription" name="subscription" placeholder="insert subscription here"/>
+          </div>
+          <div>
+              {{!-- getig the price --}}
+            <label for="price">Price:</label>
+            <input class="textarea is-large" id="price" name="price" placeholder="insert  price here"/>
+          </div> 
+          <div>
+              {{!-- geting the day --}}
+            <label for="date">Date:</label> 
+                <input class="textarea is-large" type="number" id="date" name="date" min="1" max="31"/>
+          </div> 
+        </section>
+        {{!-- create BTN --}}
+        <section id="subscription-btn">
+          <div>
+          <button type="submit" class="button is-primary is-pulled-right">Create Profile</button>
         </div>
-        <div>
-            {{!-- getig the price --}}
-          <label for="price">Price:</label>
-          <input class="textarea is-large" id="price" name="price" placeholder="insert  price here"/>
-        </div> 
-        <div>
-            {{!-- geting the day --}}
-          <label for="date">Date:</label> 
-              <input class="textarea is-large" type="number" id="date" name="date" min="1" max="31"/>
-        </div> 
-        
+        </section>
+         
       </form> 
-        
-  </section>
-  {{!-- create BTN --}}
-  <div class="subscription-btn">
-    <button type="submit" class="button is-primary is-pulled-right">Create Profile</button>
-  </div> 
+    </section>
+    
 
-  <section id="subscriptions-removal">
-    <div class="subscription">
-        <label for="text">netflex</label>
-    </div>
-    <div class="subscription">
-        <label for="text">netflex</label>
-    </div>
-    <div class="subscription">
-        <label for="text">netflex</label>
-    </div>
+    <section id="subscriptions-removal">
+      <div class="subscription">
+          <label for="text">netflex</label>
+      </div>
+      <div class="subscription">
+          <label for="text">netflex</label>
+      </div>
+      <div class="subscription">
+          <label for="text">netflex</label>
+      </div>
+    </section>
   </section>
 </section>
-<body>
-    <div id='calendar'></div>
-</body>
 <script src="/javascript/add-profile.js"></script>
