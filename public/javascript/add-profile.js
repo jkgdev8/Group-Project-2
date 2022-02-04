@@ -19,9 +19,13 @@ async function newFormHandler(event) {
   
     if (response.ok) {
       document.location.replace('/');
+      // console.log(subscription);
+      // console.log(price);
+      // console.log(date);
     } else {
       alert(response.statusText);
     }
+    
   }
   
   document.querySelector('.new-profile-form').addEventListener('submit', newFormHandler);

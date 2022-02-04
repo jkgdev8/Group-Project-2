@@ -1,6 +1,11 @@
+<head>
+<link href='/stylesheets/calendar.css' rel='stylesheet' />
+<script src='/javascript/calfunc.js'></script>
+<script src='/javascript/calendar.js'></script>
+</head>
 <section>
     
-  <h2 class="title">Create Subscription Profile</h2><hr>
+  <h2 class="title">Create A Subscription Profile</h2><hr>
 
   <form class="new-profile-form">
     <div>
@@ -8,18 +13,16 @@
       <input class="input" type="text" id="subscription" name="subscription" placeholder="insert subscription here"/>
     </div>
     <div>
-      <label for="price">Price:</label>
-      <input class="textarea is-large" id="price" name="price" placeholder="insert  price here"/>
+      <label for="price">Price $:</label>
+      <input class="textarea is-large" id="price" name="price" placeholder="insert  price here "/>
     </div> 
 
      <div>
-      <label for="date">Date:</label>
+      <label for="date">Date Cycle:</label>
         
-          <input class="textarea is-large" type="number" id="date" name="date" min="1" max="31"/>
-          
-          
-        
-    </div> 
+          <input class="textarea is-large" type="number" id="date" name="date" min="1" max="31"/>    
+        {{!-- <input type="date" id="date" name="date" value="hidden" min="2022-01-01" max="2100-12-31"> --}}
+    </div>  
 
   
       {{!-- <span>
@@ -31,6 +34,12 @@
     
     <button type="submit" class="button is-primary is-pulled-right">Create Profile</button>
   </form>     
+    <br>
+    <br>
+  <body>
+    <div id='calendar'></div>
+  </body>
+
 </section>
 
 <script src="/javascript/add-profile.js"></script>
