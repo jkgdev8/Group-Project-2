@@ -4,7 +4,7 @@ async function newFormHandler(event) {
     const subscription = document.querySelector('input[name="subscription"]').value;
     const price = document.querySelector('input[name="price"]').value;
     const date = document.querySelector('input[name="date"]').value;
-  
+    
     const response = await fetch(`/api/profile`, {
       method: 'POST',
       body: JSON.stringify({
