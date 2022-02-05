@@ -18,14 +18,7 @@ async function newFormHandler(event) {
     });
   
     if (response.ok) {
-<<<<<<< HEAD
       document.location.replace('/dashboard');
-=======
-      document.location.replace('/');
-      // console.log(subscription);
-      // console.log(price);
-      // console.log(date);
->>>>>>> 2bb3694ffc546f19dfb2dc18d7e14b1ba3019220
     } else {
       alert(response.statusText);
     }
