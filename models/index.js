@@ -5,12 +5,12 @@ const User = require('./User');
 
 // create associations
 User.hasMany(Profile, {
-  foreignKey: 'user_id'
+  // foreignKey: 'user_id'
 });
 
 Profile.belongsTo(User, {
-  foreignKey: 'user_id',
-  onDelete: 'SET NULL'
+  // foreignKey: 'user_id',
+  // onDelete: 'SET NULL'
 });
 
 
