@@ -18,6 +18,7 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
+      saveToLocalStorage(email);
       document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
@@ -45,11 +46,16 @@ async function signupFormHandler(event) {
     });
 
     if (response.ok) {
+      saveToLocalStorage(email);
       document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
     }
   }
+}
+
+const saveToLocalStorage = (email)=>{
+  localStorage.setItem('email', email)
 }
 
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);

@@ -1,26 +1,20 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Profile , User } = require('../../models');
+const { route } = require('./user-routes');
 
 
 // get all profiles
-router.get('/', (req, res) => {
+router.post('/form', (req, res) => {
   console.log('======================');
   Profile.findAll({
+    where:{ email:req.body.email},
     attributes: [
-      'id',
       'subscription',
       'price',
       'date',
-      'user_id',
+      'email'
     ],
-    include: [
-  
-      {
-        model: User,
-        attributes: ['username']
-      }
-    ]
   })
     .then(dbProfileData => res.json(dbProfileData))
     .catch(err => {
@@ -28,7 +22,21 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
-
+router.get('/',(req,res) =>{
+  Profile.findAll({
+    attributes:[
+      'subscription',
+      'price',
+      'date',
+      'email'
+    ],
+  })
+  .then(dbProfileData => res.json(dbProfileData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+})
 router.get('/:id', (req, res) => {
   console.log(req.params)
   Profile.findOne({
@@ -70,9 +78,8 @@ router.post('/', (req, res) => {
     Profile.create({
       subscription: req.body.subscription,
       price: req.body.price,
-      user_id: req.session.user_id || req.body.user_id,
-      date: req.body.date
-      
+      date: req.body.date,
+      email: req.body.email
     })
       .then(dbProfileData => res.json(dbProfileData))
       .catch(err => {

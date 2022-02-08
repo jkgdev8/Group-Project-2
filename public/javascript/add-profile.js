@@ -1,57 +1,59 @@
-var btn = document.querySelector('#btn');
-
+var storage = localStorage.getItem('email');
+// console.log(storage)
 async function newFormHandler(event) {
     event.preventDefault();
-  
+    const email = storage;
     const subscription = document.querySelector('input[name="subscription"]').value;
     const price = document.querySelector('input[name="price"]').value;
     const date = document.querySelector('input[name="date"]').value;
     
-    const response = await fetch(`/api/profile`, {
+    const response = await fetch('/api/profile', {
       method: 'POST',
       body: JSON.stringify({
         subscription,
         price,
-        date
+        date,
+        email
       }),
       headers: {
         'Content-Type': 'application/json'
       }
     });
-  
+    
     if (response.ok) {
-      document.location.replace('/dashboard');
-      return res.json();
-      
-      
+      getFormHandler();
+      // const data = response.json();
+      // console.log(data);
     } else {
       alert(response.statusText);
     }
-    
 }
 
-var clickMe = function() {
-    
-    
-  fetch(response).then(async res=>{
-      const data = await res.json();
-      
-  
-          for (var i = 0; i <= 15; i++) {  
-              var date =  document.createElement("ul");
-              date.setAttribute = 
-              date.textContent = "Date:   " + data.matches[i].date + " " + data.matches[i].team1 + " vs " 
-              + data.matches[i].team2 + " Score: " + "  "  + data.matches[i].score.ft;
-              scores.appendChild(date);
-          }
+// function senddata(){
+  async function getFormHandler(){
 
-     
-      })
+    const email = storage;
 
-  
-}
+    const response = await fetch('/api/profile/form', {
+      method: 'POST',
+      body: JSON.stringify({
+        email
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    // if (response.ok) {
+      const data = response.json();
+      console.log(data);
+    // } else {
+      // alert(response.statusText);
+    // }
+  }
 
-
-
- 
+  // const htmlText = document.querySelector(".title");
+  // htmlText.textContent = storage;
+  // console.log(storage)
+  // return document.location.replace('/dashboard');
+// }
 document.querySelector('.new-profile-form').addEventListener('submit', newFormHandler);
