@@ -39,8 +39,6 @@
   </head>
   <body>
     <header class="jumbotron">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
     <!-- days container -->
@@ -49,18 +47,24 @@
     <!-- monday container -->
     <section id="days">  
       <button onclick="mondayData(value)" id="monday" value="Monday" class="days">Monday</button>
+      <br>
       <button onclick="mondayData(value)" id="monday" value="Tuesday" class="days">Tuesday</button>
+      <br>
       <button onclick="mondayData(value)" id="monday" value="Wednesday" class="days">Wednesday</button>
+      <br>
       <button onclick="mondayData(value)" id="monday" value="Thursday" class="days">Thursday</button>
+      <br>
       <button onclick="mondayData(value)" id="monday" value="Friday" class="days">Friday</button>
+      <br>
       <button onclick="mondayData(value)" id="monday" value="Saturday" class="days">Saturday</button>
+      <br>
       <button onclick="mondayData(value)" id="monday" value="Sunday" class="days">Sunday</button>
     </section>
     <!-- schedule -->
     <section id="schedule_Container">
       <ul id="schedule"></ul>
     </section>
-      <section id="BT_containor"> <button onclick="back()" id="back_BT">back</button></section>
+      <section id="BT_containor"> <button onclick="back()" id="back_BT">Back</button></section>
     <script src="../lib/node/moment.min.js"></script>
     <script src="index.js"></script>
     
