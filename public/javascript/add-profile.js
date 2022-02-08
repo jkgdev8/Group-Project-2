@@ -1,3 +1,5 @@
+var btn = document.querySelector('#btn');
+
 async function newFormHandler(event) {
     event.preventDefault();
   
@@ -19,10 +21,37 @@ async function newFormHandler(event) {
   
     if (response.ok) {
       document.location.replace('/dashboard');
+      return res.json();
+      
+      
     } else {
       alert(response.statusText);
     }
     
-  }
+}
+
+var clickMe = function() {
+    
+    
+  fetch(response).then(async res=>{
+      const data = await res.json();
+      
   
-  document.querySelector('.new-profile-form').addEventListener('submit', newFormHandler);
+          for (var i = 0; i <= 15; i++) {  
+              var date =  document.createElement("ul");
+              date.setAttribute = 
+              date.textContent = "Date:   " + data.matches[i].date + " " + data.matches[i].team1 + " vs " 
+              + data.matches[i].team2 + " Score: " + "  "  + data.matches[i].score.ft;
+              scores.appendChild(date);
+          }
+
+     
+      })
+
+  
+}
+
+
+
+ 
+document.querySelector('.new-profile-form').addEventListener('submit', newFormHandler);

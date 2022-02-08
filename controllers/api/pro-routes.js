@@ -66,6 +66,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
   if (req.session) {
+    
     Profile.create({
       subscription: req.body.subscription,
       price: req.body.price,
@@ -78,7 +79,7 @@ router.post('/', (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
-      
+    
   }
 });
 
@@ -126,5 +127,7 @@ router.delete('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
+
+
 
 module.exports = router;
