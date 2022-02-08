@@ -1,0 +1,73 @@
+<section>
+    <a href="/dashboard" class="is-pulled-right"> &larr; Back to Dashboard</a>
+  <h2 class="title">Create Subscription Profile</h2><hr>
+<div>
+  <form class="new-post-form">
+    <div>
+      <label for="post-title">Subsciption Name:</label>
+      <input class="input" type="text" id="post-title" name="post-title" placeholder="Subscription Name"/>
+    </div>
+    <div>
+      <label for="post-content">Price:</label>
+      <input class="textarea is-large" id="post-content" name="post-content" placeholder="Price"/>
+    </div>
+
+    {{!-- <label for="start">Date Of Payment:</label>
+
+    <input type="date" id="start" name="trip-start"
+       value="2022-01-01"
+       min="2022-01-01" max="3000-12-31"> --}}
+
+      <span>
+        <label for="day">Day:</label>
+        <select name="day" id="day"></select>
+      </span> 
+<href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Work Day Scheduler</title>
+  </head>
+  <body>
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
+    </header>
+    <!-- days container -->
+    <section class="container">
+    </section>
+    <!-- monday container -->
+    <section id="days">  
+      <button onclick="mondayData(value)" id="monday" value="Monday" class="days">Monday</button>
+      <button onclick="mondayData(value)" id="monday" value="Tuesday" class="days">Tuesday</button>
+      <button onclick="mondayData(value)" id="monday" value="Wednesday" class="days">Wednesday</button>
+      <button onclick="mondayData(value)" id="monday" value="Thursday" class="days">Thursday</button>
+      <button onclick="mondayData(value)" id="monday" value="Friday" class="days">Friday</button>
+      <button onclick="mondayData(value)" id="monday" value="Saturday" class="days">Saturday</button>
+      <button onclick="mondayData(value)" id="monday" value="Sunday" class="days">Sunday</button>
+    </section>
+    <!-- schedule -->
+    <section id="schedule_Container">
+      <ul id="schedule"></ul>
+    </section>
+      <section id="BT_containor"> <button onclick="back()" id="back_BT">back</button></section>
+    <script src="../lib/node/moment.min.js"></script>
+    <script src="index.js"></script>
+    
+    <button type="submit" class="button is-primary is-pulled-right">Create Profile</button>
+  </form>
+  </div>     
+</section>
+
+<script src="/javascript/add-profile.js"></script>
+<script src="/javascript/date.js"></script>
