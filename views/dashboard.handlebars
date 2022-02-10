@@ -1,24 +1,23 @@
 <head>
 <link href='/stylesheets/calendar.css' rel='stylesheet' />
-<script src='/javascript/calfunc.js'></script>
-<script src='/javascript/calendar.js'></script>
+{{!-- <script src='/javascript/calfunc.js'></script>
+<script src='/javascript/calendar.js'></script> --}}
 </head>
-  
-      <div class="mb-5 pt-3">
-          <h2 class="title">Create Subscription Profile</h2><hr>
-      </div>
-      
-<section id="calendar-holder">
-  {{!-- calendar --}}
-  
+ 
+   <div class="mb-5 pt-3">
+       <h2 class="title">Create Subscription Profile{{username}}</h2><hr>
+       
+   </div>
 
-  <section id="subscription-containor">  
+
+      
+
     <section id="subscription-creation">
       <form class="new-profile-form" id="BTN">
         <section>
           <div>
               {{!-- geting the name of subscription --}}
-            <label for="subscription">Subsciption Name:</label>
+            <label for="subscription">Subscription Name:</label>
             <input class="input" type="text" id="subscription" name="subscription" placeholder="insert subscription here"/>
           </div>
           <div>
@@ -28,7 +27,7 @@
           </div> 
           <div>
               {{!-- geting the day --}}
-            <label for="date">Date:</label> 
+            <label for="date">Date Cycle:</label> 
                 <input class="textarea is-large" type="number" id="date" name="date" min="1" max="31"/>
           </div> 
         </section>
@@ -43,21 +42,19 @@
     </section>
 
     {{#each profiles}}
-    <ul>
-      
-      <li>{{id}}</li>
-      <li>{{subscription}}</li>
-      <li>{{price}}</li>
-      <li>{{date}}</li>
-      <li>{{user_id}}</li>
-      <li>{{username}}</li>
-      
-    </ul> 
+    <div id="box">
+      <ul id="lists"> 
+        
+        <li class= 'listings'>Subscription: {{subscription}}</li>
+        <li class= 'listings'>Price: {{price}}</li>
+        <li class= 'listings'>Date Cycle: {{date}}</li>  
+      </ul> 
+    </div>
     {{/each}}
-    <body>
+    {{!-- <body>
     <div id='calendar'></div>
     
-  </body>
+  </body> --}}
     
   
 

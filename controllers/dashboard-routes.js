@@ -33,7 +33,23 @@ router.get('/', (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
-  });
+});
+
+router.get('/', (req, res) => {
+  User.findAll({
+    attributes: { exclude: ['password'] }
+  })
+    .then(dbUserData => {
+      // serialize data before passing to template
+      const users = dbUserData.map(user => user.get({ plain: true }));
+      console.log("query result", users);
+      res.render('dashboard', { users: users, loggedIn: true });
+    })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+});
 
   router.get('/:id', (req, res) => {
     Profile.findAll({
