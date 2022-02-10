@@ -25,8 +25,9 @@ router.get('/', (req, res) => {
     })
       .then(dbProfileData => {
         // serialize data before passing to template
-        const Profiles = dbProfileData.map(Profile => Profile.get({ plain: true }));
-        res.render('dashboard', { Profiles, loggedIn: true });
+        const profiles = dbProfileData.map(profile => profile.get({ plain: true }));
+        console.log("query result", profiles);
+        res.render('dashboard', { profiles: profiles, loggedIn: true });
       })
       .catch(err => {
         console.log(err);
@@ -34,10 +35,10 @@ router.get('/', (req, res) => {
       });
   });
 
-  router.get('/edit/:id', (req, res) => {
-    Profile.findOne({
+  router.get('/:id', (req, res) => {
+    Profile.findAll({
       where: {
-        id: req.params.id
+        user_id: req.params.id
       },
       attributes: [
         'id',
@@ -62,6 +63,7 @@ router.get('/', (req, res) => {
   
         // serialize the data
         const Profile = dbProfileData.get({ plain: true });
+        console.log("query result", Profiles);
 
         res.render('edit-Profile', {
             Profile,

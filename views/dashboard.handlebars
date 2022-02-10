@@ -41,7 +41,19 @@
          
       </form> 
     </section>
-    <h1>Hi</h1>
+
+    {{#each profiles}}
+    <ul>
+      
+      <li>{{id}}</li>
+      <li>{{subscription}}</li>
+      <li>{{price}}</li>
+      <li>{{date}}</li>
+      <li>{{user_id}}</li>
+      <li>{{username}}</li>
+      
+    </ul> 
+    {{/each}}
     <body>
     <div id='calendar'></div>
     
