@@ -170,12 +170,13 @@ footer {
   background-color: blue;
 }
 #subscription-creation{
-  height: 50%;
+  height:auto;
   width: 190px;
   border: 1px solid black;
   border-right-width: 5px;
   border-left-width: 5px;
 }
+
 #subscription-btn{
   margin-top: 100%;
 }
