@@ -8,7 +8,7 @@
     <h2 class="title">Create Subscription A Profile</h2><hr>
 </div>
 
-  
+
 <section id="subscription-creation">
   <form class="new-profile-form" id="BTN">
     <section id="unique">
@@ -18,7 +18,7 @@
         <input class="input" type="text" id="subscription" name="subscription" placeholder="insert subscription here"/>
       </div>
       <div>
-          {{!-- getig the price --}}
+          {{!-- geting the price --}}
         <label for="price">Price:</label>
         <input class="textarea is-large" id="price" name="price" placeholder="insert  price here"/>
       </div> 
@@ -34,23 +34,26 @@
       <button type="submit" class="button is-primary is-pulled-right">Create Profile</button>
     </div>
     </section>
-  </form>
+  </form> 
 </section>
-
 {{#each profiles}}
-<section class="box-unique">
-  <div >
-      <ul > 
+  <span id="box-unique">
+    <span>
+      <ul> 
         <li class= 'listings'>Subscription: {{subscription}}</li>
         <li class= 'listings'>Price: {{price}}</li>
         <li class= 'listings'>Date Cycle: {{date}}</li>  
       </ul>   
-  </div>
-</section>
+    </span>  
+  </span>
 {{/each}}
-    
-<body>
-  <div id='calendar'></div>
-</body>
-</section>
+<br>
+<br>
+<div>
+ <section id='calendar'></section> 
+</div>
+
+
+
+
 <script src="/javascript/add-profile.js"></script>

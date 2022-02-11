@@ -1,5 +1,8 @@
-body
-{background-color: rgb(195, 247, 229);}
+body{
+  background-color: rgb(195, 247, 229);
+  background-image: url(/views/images/bg.jpg);
+}
+
 
 body, html {
   height: 100%;
@@ -7,6 +10,7 @@ body, html {
   margin: 0;
   font-family: sans-serif;
   color: #333;
+  
 }
 a {
   text-decoration: none;
@@ -85,7 +89,8 @@ header h1 {
 }
 main {
   flex: 1;
-  padding: 2% 4%;
+  
+  background-image: url(/img/bg.jpg);
 }
 .btn-no-style {
   background: none;
@@ -230,24 +235,19 @@ footer {
   position: center;
 }
 
-.box-unique div {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  border-right: 10px;
+#box-unique  {
+  display:inline-flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-between;
   width: 250px;
-  margin-top: 10px;
-  margin-right: 10px;
-  border: 5px solid  rgb(0, 0, 0);
+  height: 100px;
+  border: 3px solid  rgb(0, 0, 0); 
   
-  
-  
-
 }
 
 .listings{
-  display: flex;
-  flex-wrap: wrap;
+  display: flex; 
   color: rgb(0, 0, 0);
   text-shadow: 3px 3px #ffffff;
   font-size: 18px;
