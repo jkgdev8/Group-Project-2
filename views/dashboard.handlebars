@@ -3,62 +3,54 @@
 <script src='/javascript/calfunc.js'></script>
 <script src='/javascript/calendar.js'></script>
 </head>
- 
-   <div class="mb-5 pt-3">
-       <h2 class="title">Create Subscription Profile{{username}}</h2><hr>
-       
-   </div>
 
+<div class="mb-5 pt-3">
+    <h2 class="title">Create Subscription A Profile</h2><hr>
+</div>
 
-      
-
-    <section id="subscription-creation">
-      <form class="new-profile-form" id="BTN">
-        <section>
-          <div>
-              {{!-- geting the name of subscription --}}
-            <label for="subscription">Subscription Name:</label>
-            <input class="input" type="text" id="subscription" name="subscription" placeholder="insert subscription here"/>
-          </div>
-          <div>
-              {{!-- getig the price --}}
-            <label for="price">Price:</label>
-            <input class="textarea is-large" id="price" name="price" placeholder="insert  price here"/>
-          </div> 
-          <div>
-              {{!-- geting the day --}}
-            <label for="date">Date Cycle:</label> 
-                <input class="textarea is-large" type="number" id="date" name="date" min="1" max="31"/>
-          </div> 
-        </section>
-        {{!-- create BTN --}}
-        <section id="subscription-btn">
-          <div>
-          <button type="submit" class="button is-primary is-pulled-right">Create Profile</button>
-        </div>
-        </section>
-         
-      </form> 
+  
+<section id="subscription-creation">
+  <form class="new-profile-form" id="BTN">
+    <section id="unique">
+      <div>
+          {{!-- geting the name of subscription --}}
+        <label for="subscription">Subscription Name:</label>
+        <input class="input" type="text" id="subscription" name="subscription" placeholder="insert subscription here"/>
+      </div>
+      <div>
+          {{!-- getig the price --}}
+        <label for="price">Price:</label>
+        <input class="textarea is-large" id="price" name="price" placeholder="insert  price here"/>
+      </div> 
+      <div>
+          {{!-- geting the day --}}
+        <label for="date">Date Cycle:</label> 
+            <input class="textarea is-large" type="number" id="date" name="date" min="1" max="31"/>
+      </div> 
+    
+    {{!-- create BTN --}}
+    
+      <div id="but">
+      <button type="submit" class="button is-primary is-pulled-right">Create Profile</button>
+    </div>
     </section>
+  </form>
+</section>
 
-    {{#each profiles}}
-    <div id="box">
-      <ul id="lists"> 
-        
+{{#each profiles}}
+<section class="box-unique">
+  <div >
+      <ul > 
         <li class= 'listings'>Subscription: {{subscription}}</li>
         <li class= 'listings'>Price: {{price}}</li>
         <li class= 'listings'>Date Cycle: {{date}}</li>  
-      </ul> 
-    </div>
-    {{/each}}
-    <body>
-    <div id='calendar'></div>
+      </ul>   
+  </div>
+</section>
+{{/each}}
     
-  </body>
-    
-  
-
+<body>
+  <div id='calendar'></div>
+</body>
 </section>
 <script src="/javascript/add-profile.js"></script>
-
-
