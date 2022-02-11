@@ -64,6 +64,7 @@ form label {
 .wrapper h1 a {
   color: black;
   font-size: 20px;
+  text-shadow: none;
 }
 header {
   border-bottom: 1px solid rgb(0, 0, 0);
@@ -229,7 +230,7 @@ footer {
   position: center;
 }
 
-.box-unique {
+.box-unique div {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -253,6 +254,15 @@ footer {
   list-style-type: none;
   font-weight: bold;
 } 
+
+.login-form div a {
+  color: black;
+  text-shadow: none;
+}
+.signup-form div a {
+  color: black;
+  text-shadow: none;
+}
 
 
 

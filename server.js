@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(require('./controllers/'));
 
-sequelize.sync({ force: false }).then(async () => {
+sequelize.sync({ force: false}).then(async () => {
   // await seedUser();
   //   console.log('\n----- USERS SEEDED -----\n');
   
